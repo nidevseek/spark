@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spark - лучший среди майнкрафт серверов!</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Home/UI/style.css" />
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        <img src="https://media.forgecdn.net/avatars/thumbnails/495/151/256/256/637808085409071880.png" id="logo-img">
+        SPARK
+    </div>
+    <a href="#">
+        <img src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=ffffff" id="home-img">
+        Главная
+    </a>
+    <a href="#">
+        <img src="https://img.icons8.com/?size=100&id=PmjA5Nvb80LT&format=png&color=ffffff" id="book-img">
+        Правила
+    </a>
+    <a href="#">
+      <img src="https://img.icons8.com/?size=100&id=tL7D55BhC41z&format=png&color=ffffff" id="event-img">
+      Ивенты
+    </a>
+    <a href="#">
+      <img src="https://img.icons8.com/?size=100&id=59881&format=png&color=ffffff" id="info-img">
+      Вики
+    </a>
+</div>
+
+<div class="title">
+  <div class="tem">
+    <h1>Лучший</h1>
+  </div>
+  <h1 class="middle">Сервер minecraft</h1>
+  <div class="tem2">
+    <h1>Дружный</h1>
+  </div>
+</div>
+
+<div class="description">
+  <h3>Мы - дружная команда, старающаяся делать сервер лучше для вас каждый день, мы не идеальны, но стремимся к этому. Играй вместе со звездами - создавай собственное сияние</h3>
+</div>
+<div class="info">
+  <span class="version-img" id="version-skeleton"></span>
+  <img src="https://img.icons8.com/?size=30&id=59823&format=png&color=7f7f7f" id="version-img"> 1.21.5
+
+  <span class="java-img" id="java-skeleton"></span>
+  <img src="https://img.icons8.com/?size=100&id=sokzazCefFyW&format=png&color=7f7f7f" id="java-img"> Лицензия или пиратская версия
+</div>
+
+<div class="button-group">
+  <button class="button copy-btn" onclick="copyText('spark.mc-join.me')">
+    Скопировать  IP
+  </button>
+
+  <button class="button telegram-btn" onclick="window.open('https://t.me/therikky_lp/158', '_blank')">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="telegram">
+  </button>
+</div>
+
+<div class="carousel">
+  <div class="photos">
+    <img src="https://zov.one/54z25">
+    <img src="https://zov.one/21b3h">
+    <img src="https://zov.one/GeXpK">
+    <img src="https://zov.one/EW1pS">
+    <img src="https://zov.one/aasx9">
+
+    <img src="https://zov.one/54z25">
+    <img src="https://zov.one/21b3h">
+    <img src="https://zov.one/GeXpK">
+    <img src="https://zov.one/EW1pS">
+    <img src="https://zov.one/aasx9">
+  </div>
+</div>
+
+<div class="server-stats">
+  <div class="status">
+    <img id="server-icon" alt="server icon" width="40" height="40">
+    <span>Сервер: <b id="server-status">Загрузка...</b></span>
+  </div>
+  <div class="players">
+    <img src="https://img.icons8.com/?size=100&id=jqBrkphgtH8x&format=png&color=ffffff" alt="players">
+    <span>Онлайн: <b id="server-players">0/-1</b></span>
+  </div>
+</div>
+
+
+<script>
+// function loadImage(imgId, skeletonId) {
+//     const img = document.getElementById(imgId);
+//     const skeleton = document.getElementById(skeletonId);
+
+//     img.onload = () => {
+//         skeleton.style.display = 'none';
+//         img.style.display = 'inline-block';
+//     };
+//     img.onerror = () => {
+//         console.log(`${imgId} не загрузилась`);
+//     };
+// }
+
+// loadImage('logo-img', 'logo-skeleton');
+// loadImage('home-img', 'home-skeleton');
+// loadImage('book-img', 'book-skeleton');
+// loadImage('event-img', 'event-skeleton');
+// loadImage('info-img', 'info-skeleton');
+// loadImage('version-img', 'version-skeleton');
+// loadImage('java-img', 'java-skeleton');
+
+async function fetchServerStatus() {
+  try {
+  const response = await fetch("https://api.mcsrvstat.us/2/spark.mc-join.me");
+  const data = await response.json();
+
+  const statusEl = document.getElementById("server-status");
+  const playersEl = document.getElementById("server-players");
+  const iconEl = document.getElementById("server-icon");
+
+  if (data.online) {
+    statusEl.innerHTML = "<span style='background:#3dcc47;color:#fff;padding:3px 8px;border-radius:6px'>Работает</span>";
+    playersEl.textContent = `${data.players.online}/${data.players.max}`;
+    if (data.icon) {
+      iconEl.src = data.icon;
+    } else {
+      iconEl.src = "https://img.icons8.com/?size=100&id=jqBrkphgtH8x&format=png&color=000000";
+    }
+  } else {
+    statusEl.innerHTML = "<span style='background:#f44336;color:#fff;padding:3px 8px;border-radius:6px'>Выключен</span>";
+    playersEl.textContent = "0/0";
+    iconEl.src = "https://img.icons8.com/?size=100&id=jqBrkphgtH8x&format=png&color=000000";
+  }
+} catch (err) {
+  console.error("Ошибка получения статуса:", err);
+}
+
+}
+
+fetchServerStatus();
+setInterval(fetchServerStatus, 30000);
+
+
+fetchServerStatus();
+setInterval(fetchServerStatus, 30000);
+
+function copyText(text) {
+    navigator.clipboard.writeText(text).catch(err => {
+      console.error("Ошибка копирования: ", err);
+    });
+  }
+</script>
+</body>
+</html>
