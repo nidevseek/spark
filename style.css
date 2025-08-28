@@ -317,9 +317,133 @@ h1 {
   font-weight: 600;
 }
 
+.intro {
+  color: #bbb;
+  font-style: italic;
+  font-size: 10px;
+  font-family: 'Unbounded', sans-serif;
+}
+
+.toc {
+  display: flex;
+  padding-left: 0px;
+  gap: 30px;
+  color: #ffffff;
+  font-family: 'Unbounded', sans-serif;
+}
+
+.toc a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.toc a:hover {
+  color: #fff;
+}
+
+.rules-wrapper {
+  margin: 0 8vw 40px;
+}
+
+.rules-category {
+  background: #100f0f;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  padding: 25px 30px;
+}
+
+.rules-category h2 {
+  font-size: 20px;
+  font-family: 'Unbounded', sans-serif;
+  position: relative;
+  color: #fff;
+}
+
+.rules-category ol {
+  counter-reset: item;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rules-category li {
+  font-size: 15px;
+  font-family: 'Unbounded', sans-serif;
+  counter-increment: item;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  position: relative;
+  border-radius: 8px;
+  background: #151515;
+  color: #ddd;
+}
+
+.rules-category li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.rule-text {
+  margin-left: 20px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.penalty {
+  background: #0e0e0e;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85em;
+  color: #ff5757;
+  font-style: normal;
+}
+
+.rules-category cite {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.85em;
+  color: #aaa;
+  font-style: italic;
+}
+
+.rules-category.general h2 { color: #4caf50; }
+.rules-category.social h2 { color: #03a9f4; }
+.rules-category.building h2 { color: #9c27b0; }
+
 @media (max-width: 768px) {
   body, html {
     padding-top: 50px;
+  }
+
+  .rules-category li {
+    font-size: 12px;
+    font-family: 'Unbounded', sans-serif;
+    counter-increment: item;
+    margin-bottom: 16px;
+    padding: 10px 10px 10px 45px;
+    position: relative;
+    border-radius: 8px;
+    background: #151515;
+    color: #ddd;
+  }
+
+  .toc {
+    display: flex;
+    flex-direction: column; 
+    gap: 5px;
+  }
+
+  .toc a {
+    font-size: 17px;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: block;
   }
 
   .carousel {
