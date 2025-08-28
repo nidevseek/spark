@@ -6,7 +6,7 @@
 <title>Spark - лучший среди майнкрафт серверов!</title>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="Home/UI/style.css" />
 </head>
 <body>
 <div class="nav">
@@ -14,11 +14,11 @@
         <img src="https://media.forgecdn.net/avatars/thumbnails/495/151/256/256/637808085409071880.png" id="logo-img">
         SPARK
     </div>
-    <a href="#">
+    <a href="/index.html">
         <img src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=ffffff" id="home-img">
         Главная
     </a>
-    <a href="#">
+    <a href="/rules.html">
         <img src="https://img.icons8.com/?size=100&id=PmjA5Nvb80LT&format=png&color=ffffff" id="book-img">
         Правила
     </a>
@@ -54,12 +54,8 @@
 </div>
 
 <div class="button-group">
-  <button class="button copy-btn" onclick="copyText('89.35.130.12:25720')">
+  <button class="button copy-btn" onclick="copyText('spark.mc-join.me')">
     Скопировать  IP
-  </button>
-
-  <button class="button copy-btn" onclick="window.open('http://89.35.130.12:25099/', '_blank')">
-        <img src="https://img.icons8.com/?size=100&id=2963&format=png&color=ffffff" alt="map">
   </button>
 
   <button class="button telegram-btn" onclick="window.open('https://t.me/therikky_lp/158', '_blank')">
@@ -119,7 +115,7 @@
 
 async function fetchServerStatus() {
   try {
-  const response = await fetch("https://api.mcsrvstat.us/2/89.35.130.12:25720");
+  const response = await fetch("https://api.mcsrvstat.us/2/spark.mc-join.me");
   const data = await response.json();
 
   const statusEl = document.getElementById("server-status");
@@ -160,7 +156,3 @@ function copyText(text) {
 </script>
 </body>
 </html>
-
-
-
-
