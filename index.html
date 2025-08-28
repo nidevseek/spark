@@ -90,7 +90,6 @@
   </div>
 </div>
 
-
 <script>
 // function loadImage(imgId, skeletonId) {
 //     const img = document.getElementById(imgId);
@@ -115,7 +114,7 @@
 
 async function fetchServerStatus() {
   try {
-  const response = await fetch("https://api.mcsrvstat.us/2/spark.mc-join.me");
+  const response = await fetch("https://api.mcsrvstat.us/2/89.35.130.12:25720");
   const data = await response.json();
 
   const statusEl = document.getElementById("server-status");
@@ -156,5 +155,6 @@ function copyText(text) {
 </script>
 </body>
 </html>
+
 
 
