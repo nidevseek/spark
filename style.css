@@ -468,6 +468,16 @@ h1 {
     text-decoration: none;
   }
 
+  h3 {
+  margin-top: 2rem;
+  margin-left: 8vw;
+  margin-right: 8vw;
+  font-weight: 400;
+  font-family: 'Unbounded', sans-serif;
+  color: #888888;
+  font-size: 14px;
+}
+  
   .nav .logo {
     display: none;
   }
@@ -586,3 +596,4 @@ h1 {
     flex-wrap: wrap;
   }
 }
+
