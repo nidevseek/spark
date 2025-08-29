@@ -491,7 +491,7 @@ h1 {
   }
 
   h1, h3 {
-    width: 90%;
+    width: 80%;
   }
 
   .copy-btn, .telegram-btn {
@@ -596,5 +596,6 @@ h1 {
     flex-wrap: wrap;
   }
 }
+
 
 
