@@ -526,7 +526,7 @@ h1 {
 
 @media (max-width: 480px) {
   .server-stats {
-    margin-left: 10px;
+    margin-left: 0px;
     margin-right: 10px;
     gap: 12px;
     padding: 12px 15px;
@@ -596,6 +596,7 @@ h1 {
     flex-wrap: wrap;
   }
 }
+
 
 
 
