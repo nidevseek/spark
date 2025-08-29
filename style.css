@@ -159,7 +159,7 @@ h1 {
   align-items: center;
   font-family: "Unbounded", sans-serif;
   color: #7f7f7f;
-  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-size: 14px;
 }
 
 #version-img {
@@ -596,6 +596,7 @@ h1 {
     flex-wrap: wrap;
   }
 }
+
 
 
 
