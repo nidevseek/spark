@@ -54,7 +54,7 @@
 </div>
 
 <div class="button-group">
-  <button class="button copy-btn" onclick="copyText('89.35.130.12:25720')">
+  <button class="button copy-btn" onclick="copyText('sparks.mspt.xyz')">
     Скопировать  IP
   </button>
 
@@ -118,7 +118,7 @@
 
 async function fetchServerStatus() {
   try {
-  const response = await fetch("https://api.mcsrvstat.us/2/89.35.130.12:25720");
+  const response = await fetch("https://api.mcsrvstat.us/2/sparks.mspt.xyz");
   const data = await response.json();
 
   const statusEl = document.getElementById("server-status");
@@ -159,6 +159,7 @@ function copyText(text) {
 </script>
 </body>
 </html>
+
 
 
 
